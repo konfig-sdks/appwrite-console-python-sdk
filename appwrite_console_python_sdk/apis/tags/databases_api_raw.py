@@ -1,0 +1,116 @@
+# coding: utf-8
+
+"""
+    Appwrite
+
+    Appwrite backend as a service cuts up to 70% of the time and costs required for building a modern application. We abstract and simplify common development tasks behind a REST APIs, to help you develop your app in a fast and secure way. For full API documentation and tutorials go to [https://appwrite.io/docs](https://appwrite.io/docs)
+
+    The version of the OpenAPI document: 1.5.0
+    Contact: team@appwrite.io
+    Created by: https://appwrite.io/support
+"""
+
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_boolean.post import CreateBooleanAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections.post import CreateCollectionRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_datetime.post import CreateDatetimeAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_documents.post import CreateDocumentRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_email.post import CreateEmailAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_enum.post import CreateEnumAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_float.post import CreateFloatAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_indexes.post import CreateIndexOnAttributesRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_integer.post import CreateIntegerAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_ip.post import CreateIpAttributeRaw
+from appwrite_console_python_sdk.paths.databases.post import CreateNewDatabaseRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_relationship.post import CreateRelationshipAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_string.post import CreateStringAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_url.post import CreateUrlAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_key.delete import DeleteAttributeByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id.delete import DeleteByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id.delete import DeleteCollectionByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_documents_document_id.delete import DeleteDocumentByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_indexes_key.delete import DeleteIndexByKeyRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_key.get import GetAttributeByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id.get import GetByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id.get import GetCollectionByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_usage.get import GetCollectionUsageStatsRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_documents_document_id.get import GetDocumentByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_documents.get import GetDocumentsRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_indexes_key.get import GetIndexByIdRaw
+from appwrite_console_python_sdk.paths.databases_usage.get import GetUsageStatsRaw
+from appwrite_console_python_sdk.paths.databases_database_id_usage.get import GetUsageStats0Raw
+from appwrite_console_python_sdk.paths.databases.get import ListAllDatabasesRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes.get import ListAttributesRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_indexes.get import ListCollectionIndexesRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_logs.get import ListCollectionLogsRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections.get import ListCollectionsRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_documents_document_id_logs.get import ListDocumentLogsRaw
+from appwrite_console_python_sdk.paths.databases_database_id_logs.get import ListLogsRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_datetime_key.patch import PatchDateTimeAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_boolean_key.patch import UpdateBooleanAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id.put import UpdateByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id.put import UpdateCollectionByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_documents_document_id.patch import UpdateDocumentByIdRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_email_key.patch import UpdateEmailAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_enum_key.patch import UpdateEnumAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_float_key.patch import UpdateFloatAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_integer_key.patch import UpdateIntegerAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_ip_key.patch import UpdateIpAddressAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_key_relationship.patch import UpdateRelationshipAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_string_key.patch import UpdateStringAttributeRaw
+from appwrite_console_python_sdk.paths.databases_database_id_collections_collection_id_attributes_url_key.patch import UpdateUrlAttributeRaw
+
+
+class DatabasesApiRaw(
+    CreateBooleanAttributeRaw,
+    CreateCollectionRaw,
+    CreateDatetimeAttributeRaw,
+    CreateDocumentRaw,
+    CreateEmailAttributeRaw,
+    CreateEnumAttributeRaw,
+    CreateFloatAttributeRaw,
+    CreateIndexOnAttributesRaw,
+    CreateIntegerAttributeRaw,
+    CreateIpAttributeRaw,
+    CreateNewDatabaseRaw,
+    CreateRelationshipAttributeRaw,
+    CreateStringAttributeRaw,
+    CreateUrlAttributeRaw,
+    DeleteAttributeByIdRaw,
+    DeleteByIdRaw,
+    DeleteCollectionByIdRaw,
+    DeleteDocumentByIdRaw,
+    DeleteIndexByKeyRaw,
+    GetAttributeByIdRaw,
+    GetByIdRaw,
+    GetCollectionByIdRaw,
+    GetCollectionUsageStatsRaw,
+    GetDocumentByIdRaw,
+    GetDocumentsRaw,
+    GetIndexByIdRaw,
+    GetUsageStatsRaw,
+    GetUsageStats0Raw,
+    ListAllDatabasesRaw,
+    ListAttributesRaw,
+    ListCollectionIndexesRaw,
+    ListCollectionLogsRaw,
+    ListCollectionsRaw,
+    ListDocumentLogsRaw,
+    ListLogsRaw,
+    PatchDateTimeAttributeRaw,
+    UpdateBooleanAttributeRaw,
+    UpdateByIdRaw,
+    UpdateCollectionByIdRaw,
+    UpdateDocumentByIdRaw,
+    UpdateEmailAttributeRaw,
+    UpdateEnumAttributeRaw,
+    UpdateFloatAttributeRaw,
+    UpdateIntegerAttributeRaw,
+    UpdateIpAddressAttributeRaw,
+    UpdateRelationshipAttributeRaw,
+    UpdateStringAttributeRaw,
+    UpdateUrlAttributeRaw,
+):
+    """NOTE:
+    This class is auto generated by Konfig (https://konfigthis.com)
+    """
+    pass
