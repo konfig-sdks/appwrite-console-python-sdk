@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 [![Visit Appwrite](./header.png)](https://appwrite.io)
 
@@ -396,10 +396,8 @@ from pprint import pprint
 from appwrite_console_python_sdk import AppwriteConsole, ApiException
 
 appwriteconsole = AppwriteConsole(
-
-        jwt = 'YOUR_API_KEY',
-
-        project = 'YOUR_API_KEY',
+    jwt="YOUR_API_KEY",
+    project="YOUR_API_KEY",
 )
 
 try:
@@ -422,23 +420,23 @@ except ApiException as e:
 `async` support is available by prepending `a` to any method.
 
 ```python
-
 import asyncio
 from pprint import pprint
 from appwrite_console_python_sdk import AppwriteConsole, ApiException
 
 appwriteconsole = AppwriteConsole(
-
-        jwt = 'YOUR_API_KEY',
-
-        project = 'YOUR_API_KEY',
+    jwt="YOUR_API_KEY",
+    project="YOUR_API_KEY",
 )
+
 
 async def main():
     try:
         # Add Authenticator
-        add_authenticator_app_response = await appwriteconsole.account.aadd_authenticator_app(
-            type="totp",
+        add_authenticator_app_response = (
+            await appwriteconsole.account.aadd_authenticator_app(
+                type="totp",
+            )
         )
         print(add_authenticator_app_response)
     except ApiException as e:
@@ -448,6 +446,7 @@ async def main():
         pprint(e.status)
         pprint(e.reason)
         pprint(e.round_trip_time)
+
 
 asyncio.run(main())
 ```
@@ -461,10 +460,8 @@ from pprint import pprint
 from appwrite_console_python_sdk import AppwriteConsole, ApiException
 
 appwriteconsole = AppwriteConsole(
-
-        jwt = 'YOUR_API_KEY',
-
-        project = 'YOUR_API_KEY',
+    jwt="YOUR_API_KEY",
+    project="YOUR_API_KEY",
 )
 
 try:
@@ -526,9 +523,11 @@ Use this endpoint to complete the user email verification process. Use both the 
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-complete_email_verification_response = appwriteconsole.account.complete_email_verification(
-    user_id="<USER_ID>",
-    secret="<SECRET>",
+complete_email_verification_response = (
+    appwriteconsole.account.complete_email_verification(
+        user_id="<USER_ID>",
+        secret="<SECRET>",
+    )
 )
 ```
 
@@ -604,10 +603,12 @@ Please note that in order to avoid a [Redirect Attack](https://github.com/OWASP/
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-complete_password_recovery_response = appwriteconsole.account.complete_password_recovery(
-    user_id="<USER_ID>",
-    secret="<SECRET>",
-    password="string_example",
+complete_password_recovery_response = (
+    appwriteconsole.account.complete_password_recovery(
+        user_id="<USER_ID>",
+        secret="<SECRET>",
+        password="string_example",
+    )
 )
 ```
 
@@ -647,9 +648,11 @@ Use this endpoint to complete the user phone verification process. Use the **use
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-confirm_phone_verification_response = appwriteconsole.account.confirm_phone_verification(
-    user_id="<USER_ID>",
-    secret="<SECRET>",
+confirm_phone_verification_response = (
+    appwriteconsole.account.confirm_phone_verification(
+        user_id="<USER_ID>",
+        secret="<SECRET>",
+    )
 )
 ```
 
@@ -709,9 +712,11 @@ A user is limited to 10 active sessions at a time by default. [Learn more about 
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_email_password_session_response = appwriteconsole.account.create_email_password_session(
-    email="email@example.com",
-    password="password",
+create_email_password_session_response = (
+    appwriteconsole.account.create_email_password_session(
+        email="email@example.com",
+        password="password",
+    )
 )
 ```
 
@@ -1232,9 +1237,11 @@ Delete an authenticator for a user by ID.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-delete_authenticator_by_id_response = appwriteconsole.account.delete_authenticator_by_id(
-    otp="<OTP>",
-    type="totp",
+delete_authenticator_by_id_response = (
+    appwriteconsole.account.delete_authenticator_by_id(
+        otp="<OTP>",
+        type="totp",
+    )
 )
 ```
 
@@ -1640,7 +1647,9 @@ Regenerate recovery codes that can be used as backup for MFA flow. Before regene
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-regenerate_mfa_recovery_codes_response = appwriteconsole.account.regenerate_mfa_recovery_codes()
+regenerate_mfa_recovery_codes_response = (
+    appwriteconsole.account.regenerate_mfa_recovery_codes()
+)
 ```
 
 #### 🔄 Return<a id="🔄-return"></a>
@@ -2472,9 +2481,7 @@ create_collection_response = appwriteconsole.databases.create_collection(
     collection_id="<COLLECTION_ID>",
     name="<NAME>",
     database_id="databaseId_example",
-    permissions=[
-        "[\"read(\"any\")\"]"
-    ],
+    permissions=['["read("any")"]'],
     document_security=False,
     enabled=False,
 )
@@ -2526,13 +2533,15 @@ Create a date time attribute according to the ISO 8601 standard.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_datetime_attribute_response = appwriteconsole.databases.create_datetime_attribute(
-    key="string_example",
-    required=False,
-    database_id="databaseId_example",
-    collection_id="collectionId_example",
-    default="string_example",
-    array=False,
+create_datetime_attribute_response = (
+    appwriteconsole.databases.create_datetime_attribute(
+        key="string_example",
+        required=False,
+        database_id="databaseId_example",
+        collection_id="collectionId_example",
+        default="string_example",
+        array=False,
+    )
 )
 ```
 
@@ -2589,9 +2598,7 @@ create_document_response = appwriteconsole.databases.create_document(
     data={},
     database_id="databaseId_example",
     collection_id="collectionId_example",
-    permissions=[
-        "[\"read(\"any\")\"]"
-    ],
+    permissions=['["read("any")"]'],
 )
 ```
 
@@ -2699,9 +2706,7 @@ Create an enumeration attribute. The `elements` param acts as a white-list of ac
 ```python
 create_enum_attribute_response = appwriteconsole.databases.create_enum_attribute(
     key="string_example",
-    elements=[
-        "string_example"
-    ],
+    elements=["string_example"],
     required=False,
     database_id="databaseId_example",
     collection_id="collectionId_example",
@@ -2830,17 +2835,15 @@ Attributes can be `key`, `fulltext`, and `unique`.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_index_on_attributes_response = appwriteconsole.databases.create_index_on_attributes(
-    key="string_example",
-    type="key",
-    attributes=[
-        "string_example"
-    ],
-    database_id="databaseId_example",
-    collection_id="collectionId_example",
-    orders=[
-        "string_example"
-    ],
+create_index_on_attributes_response = (
+    appwriteconsole.databases.create_index_on_attributes(
+        key="string_example",
+        type="key",
+        attributes=["string_example"],
+        database_id="databaseId_example",
+        collection_id="collectionId_example",
+        orders=["string_example"],
+    )
 )
 ```
 
@@ -3061,15 +3064,17 @@ Create relationship attribute. [Learn more about relationship attributes](https:
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_relationship_attribute_response = appwriteconsole.databases.create_relationship_attribute(
-    related_collection_id="<RELATED_COLLECTION_ID>",
-    type="oneToOne",
-    database_id="databaseId_example",
-    collection_id="collectionId_example",
-    two_way=False,
-    key="string_example",
-    two_way_key="string_example",
-    on_delete="cascade",
+create_relationship_attribute_response = (
+    appwriteconsole.databases.create_relationship_attribute(
+        related_collection_id="<RELATED_COLLECTION_ID>",
+        type="oneToOne",
+        database_id="databaseId_example",
+        collection_id="collectionId_example",
+        two_way=False,
+        key="string_example",
+        two_way_key="string_example",
+        on_delete="cascade",
+    )
 )
 ```
 
@@ -3527,10 +3532,12 @@ Get collection usage stats
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_collection_usage_stats_response = appwriteconsole.databases.get_collection_usage_stats(
-    database_id="databaseId_example",
-    collection_id="collectionId_example",
-    range="30d",
+get_collection_usage_stats_response = (
+    appwriteconsole.databases.get_collection_usage_stats(
+        database_id="databaseId_example",
+        collection_id="collectionId_example",
+        range="30d",
+    )
 )
 ```
 
@@ -4032,12 +4039,14 @@ Update a date time attribute. Changing the `default` value will not update alrea
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-patch_date_time_attribute_response = appwriteconsole.databases.patch_date_time_attribute(
-    required=False,
-    default="string_example",
-    database_id="databaseId_example",
-    collection_id="collectionId_example",
-    key="key_example",
+patch_date_time_attribute_response = (
+    appwriteconsole.databases.patch_date_time_attribute(
+        required=False,
+        default="string_example",
+        database_id="databaseId_example",
+        collection_id="collectionId_example",
+        key="key_example",
+    )
 )
 ```
 
@@ -4185,9 +4194,7 @@ update_collection_by_id_response = appwriteconsole.databases.update_collection_b
     name="<NAME>",
     database_id="databaseId_example",
     collection_id="collectionId_example",
-    permissions=[
-        "[\"read(\"any\")\"]"
-    ],
+    permissions=['["read("any")"]'],
     document_security=False,
     enabled=False,
 )
@@ -4244,9 +4251,7 @@ update_document_by_id_response = appwriteconsole.databases.update_document_by_id
     collection_id="collectionId_example",
     document_id="documentId_example",
     data={},
-    permissions=[
-        "[\"read(\"any\")\"]"
-    ],
+    permissions=['["read("any")"]'],
 )
 ```
 
@@ -4348,9 +4353,7 @@ Update an enum attribute. Changing the `default` value will not update already e
 
 ```python
 update_enum_attribute_response = appwriteconsole.databases.update_enum_attribute(
-    elements=[
-        "string_example"
-    ],
+    elements=["string_example"],
     required=False,
     default="<DEFAULT>",
     database_id="databaseId_example",
@@ -4534,12 +4537,14 @@ Update an ip attribute. Changing the `default` value will not update already exi
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_ip_address_attribute_response = appwriteconsole.databases.update_ip_address_attribute(
-    required=False,
-    default="string_example",
-    database_id="databaseId_example",
-    collection_id="collectionId_example",
-    key="key_example",
+update_ip_address_attribute_response = (
+    appwriteconsole.databases.update_ip_address_attribute(
+        required=False,
+        default="string_example",
+        database_id="databaseId_example",
+        collection_id="collectionId_example",
+        key="key_example",
+    )
 )
 ```
 
@@ -4588,11 +4593,13 @@ Update relationship attribute. [Learn more about relationship attributes](https:
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_relationship_attribute_response = appwriteconsole.databases.update_relationship_attribute(
-    database_id="databaseId_example",
-    collection_id="collectionId_example",
-    key="key_example",
-    on_delete="cascade",
+update_relationship_attribute_response = (
+    appwriteconsole.databases.update_relationship_attribute(
+        database_id="databaseId_example",
+        collection_id="collectionId_example",
+        key="key_example",
+        on_delete="cascade",
+    )
 )
 ```
 
@@ -4805,12 +4812,8 @@ create_function_response = appwriteconsole.functions.create_function(
     function_id="<FUNCTION_ID>",
     name="<NAME>",
     runtime="node-14.5",
-    execute=[
-        "[\"any\"]"
-    ],
-    events=[
-        "string_example"
-    ],
+    execute=['["any"]'],
+    events=["string_example"],
     schedule="string_example",
     timeout=1,
     enabled=False,
@@ -5556,12 +5559,8 @@ update_by_id_response = appwriteconsole.functions.update_by_id(
     name="<NAME>",
     function_id="functionId_example",
     runtime="node-14.5",
-    execute=[
-        "[\"any\"]"
-    ],
-    events=[
-        "string_example"
-    ],
+    execute=['["any"]'],
+    events=["string_example"],
     schedule="string_example",
     timeout=1,
     enabled=False,
@@ -5660,9 +5659,11 @@ Update the function code deployment ID using the unique function ID. Use this en
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_deployment_by_function_and_id_response = appwriteconsole.functions.update_deployment_by_function_and_id(
-    function_id="functionId_example",
-    deployment_id="deploymentId_example",
+update_deployment_by_function_and_id_response = (
+    appwriteconsole.functions.update_deployment_by_function_and_id(
+        function_id="functionId_example",
+        deployment_id="deploymentId_example",
+    )
 )
 ```
 
@@ -5817,7 +5818,9 @@ Check the Appwrite HTTP server is up and responsive.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-check_appwrite_http_server_response = appwriteconsole.health.check_appwrite_http_server()
+check_appwrite_http_server_response = (
+    appwriteconsole.health.check_appwrite_http_server()
+)
 ```
 
 #### 🔄 Return<a id="🔄-return"></a>
@@ -6666,24 +6669,12 @@ create_email_message_response = appwriteconsole.messaging.create_email_message(
     message_id="<MESSAGE_ID>",
     subject="<SUBJECT>",
     content="<CONTENT>",
-    topics=[
-        "string_example"
-    ],
-    users=[
-        "string_example"
-    ],
-    targets=[
-        "string_example"
-    ],
-    cc=[
-        "string_example"
-    ],
-    bcc=[
-        "string_example"
-    ],
-    attachments=[
-        "string_example"
-    ],
+    topics=["string_example"],
+    users=["string_example"],
+    targets=["string_example"],
+    cc=["string_example"],
+    bcc=["string_example"],
+    attachments=["string_example"],
     draft=False,
     html=False,
     scheduled_at="string_example",
@@ -6937,9 +6928,7 @@ Create a new topic.
 create_new_topic_response = appwriteconsole.messaging.create_new_topic(
     topic_id="<TOPIC_ID>",
     name="<NAME>",
-    subscribe=[
-        "[\"any\"]"
-    ],
+    subscribe=['["any"]'],
 )
 ```
 
@@ -6981,15 +6970,9 @@ create_push_notification_response = appwriteconsole.messaging.create_push_notifi
     title="<TITLE>",
     message_id="<MESSAGE_ID>",
     body="<BODY>",
-    topics=[
-        "string_example"
-    ],
-    users=[
-        "string_example"
-    ],
-    targets=[
-        "string_example"
-    ],
+    topics=["string_example"],
+    users=["string_example"],
+    targets=["string_example"],
     data={},
     action="<ACTION>",
     image="[ID1:ID2]",
@@ -7156,15 +7139,9 @@ Create a new SMS message.
 create_sms_message_response = appwriteconsole.messaging.create_sms_message(
     message_id="<MESSAGE_ID>",
     content="<CONTENT>",
-    topics=[
-        "string_example"
-    ],
-    users=[
-        "string_example"
-    ],
-    targets=[
-        "string_example"
-    ],
+    topics=["string_example"],
+    users=["string_example"],
+    targets=["string_example"],
     draft=False,
     scheduled_at="string_example",
 )
@@ -7415,13 +7392,15 @@ Create a new Textmagic provider.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_textmagic_provider_response = appwriteconsole.messaging.create_textmagic_provider(
-    provider_id="<PROVIDER_ID>",
-    name="<NAME>",
-    _from="+12065550100",
-    username="<USERNAME>",
-    api_key="<API_KEY>",
-    enabled=False,
+create_textmagic_provider_response = (
+    appwriteconsole.messaging.create_textmagic_provider(
+        provider_id="<PROVIDER_ID>",
+        name="<NAME>",
+        _from="+12065550100",
+        username="<USERNAME>",
+        api_key="<API_KEY>",
+        enabled=False,
+    )
 )
 ```
 
@@ -8218,25 +8197,15 @@ Update an email message by its unique ID.
 ```python
 update_email_by_id_response = appwriteconsole.messaging.update_email_by_id(
     message_id="messageId_example",
-    topics=[
-        "string_example"
-    ],
-    users=[
-        "string_example"
-    ],
-    targets=[
-        "string_example"
-    ],
+    topics=["string_example"],
+    users=["string_example"],
+    targets=["string_example"],
     subject="<SUBJECT>",
     content="<CONTENT>",
     draft=False,
     html=False,
-    cc=[
-        "string_example"
-    ],
-    bcc=[
-        "string_example"
-    ],
+    cc=["string_example"],
+    bcc=["string_example"],
     scheduled_at="string_example",
 )
 ```
@@ -8487,15 +8456,9 @@ Update a push notification by its unique ID.
 update_push_message_response = appwriteconsole.messaging.update_push_message(
     message_id="messageId_example",
     title="<TITLE>",
-    topics=[
-        "string_example"
-    ],
-    users=[
-        "string_example"
-    ],
-    targets=[
-        "string_example"
-    ],
+    topics=["string_example"],
+    users=["string_example"],
+    targets=["string_example"],
     body="<BODY>",
     data={},
     action="<ACTION>",
@@ -8663,15 +8626,9 @@ Update an email message by its unique ID.
 ```python
 update_sms_message_by_id_response = appwriteconsole.messaging.update_sms_message_by_id(
     message_id="messageId_example",
-    topics=[
-        "string_example"
-    ],
-    users=[
-        "string_example"
-    ],
-    targets=[
-        "string_example"
-    ],
+    topics=["string_example"],
+    users=["string_example"],
+    targets=["string_example"],
     content="<CONTENT>",
     draft=False,
     scheduled_at="string_example",
@@ -8880,13 +8837,15 @@ Update a Textmagic provider by its unique ID.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_textmagic_provider_response = appwriteconsole.messaging.update_textmagic_provider(
-    provider_id="providerId_example",
-    name="<NAME>",
-    enabled=False,
-    username="<USERNAME>",
-    api_key="<API_KEY>",
-    _from="<FROM>",
+update_textmagic_provider_response = (
+    appwriteconsole.messaging.update_textmagic_provider(
+        provider_id="providerId_example",
+        name="<NAME>",
+        enabled=False,
+        username="<USERNAME>",
+        api_key="<API_KEY>",
+        _from="<FROM>",
+    )
 )
 ```
 
@@ -8942,9 +8901,7 @@ Update a topic by its unique ID.
 update_topic_by_id_response = appwriteconsole.messaging.update_topic_by_id(
     topic_id="topicId_example",
     name="<NAME>",
-    subscribe=[
-        "[\"any\"]"
-    ],
+    subscribe=['["any"]'],
 )
 ```
 
@@ -9040,13 +8997,15 @@ Update a Vonage provider by its unique ID.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_vonage_provider_by_id_response = appwriteconsole.messaging.update_vonage_provider_by_id(
-    provider_id="providerId_example",
-    name="<NAME>",
-    enabled=False,
-    api_key="<API_KEY>",
-    api_secret="<API_SECRET>",
-    _from="<FROM>",
+update_vonage_provider_by_id_response = (
+    appwriteconsole.messaging.update_vonage_provider_by_id(
+        provider_id="providerId_example",
+        name="<NAME>",
+        enabled=False,
+        api_key="<API_KEY>",
+        api_secret="<API_SECRET>",
+        _from="<FROM>",
+    )
 )
 ```
 
@@ -9098,13 +9057,13 @@ Migrate Appwrite Data
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_appwrite_migration_response = appwriteconsole.migrations.create_appwrite_migration(
-    resources=[
-        "string_example"
-    ],
-    endpoint="https://example.com",
-    project_id="<PROJECT_ID>",
-    api_key="<API_KEY>",
+create_appwrite_migration_response = (
+    appwriteconsole.migrations.create_appwrite_migration(
+        resources=["string_example"],
+        endpoint="https://example.com",
+        project_id="<PROJECT_ID>",
+        api_key="<API_KEY>",
+    )
 )
 ```
 
@@ -9147,9 +9106,7 @@ Migrate NHost Data
 
 ```python
 create_n_host_migration_response = appwriteconsole.migrations.create_n_host_migration(
-    resources=[
-        "string_example"
-    ],
+    resources=["string_example"],
     subdomain="<SUBDOMAIN>",
     region="<REGION>",
     admin_secret="<ADMIN_SECRET>",
@@ -9241,9 +9198,7 @@ Migrate Firebase Data (Service Account)
 
 ```python
 firebase_data_migration_response = appwriteconsole.migrations.firebase_data_migration(
-    resources=[
-        "string_example"
-    ],
+    resources=["string_example"],
     service_account="<SERVICE_ACCOUNT>",
 )
 ```
@@ -9279,9 +9234,7 @@ Migrate Firebase Data (OAuth)
 
 ```python
 firebase_o_auth_migrate_response = appwriteconsole.migrations.firebase_o_auth_migrate(
-    resources=[
-        "string_example"
-    ],
+    resources=["string_example"],
     project_id="<PROJECT_ID>",
 )
 ```
@@ -9317,9 +9270,7 @@ Generate a report on Firebase Data
 
 ```python
 generate_firebase_report_response = appwriteconsole.migrations.generate_firebase_report(
-    resources=[
-        "resources_example"
-    ],
+    resources=["resources_example"],
     service_account="serviceAccount_example",
 )
 ```
@@ -9353,11 +9304,11 @@ Generate a report on Firebase Data using OAuth
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-generate_firebase_report_o_auth_response = appwriteconsole.migrations.generate_firebase_report_o_auth(
-    resources=[
-        "resources_example"
-    ],
-    project_id="projectId_example",
+generate_firebase_report_o_auth_response = (
+    appwriteconsole.migrations.generate_firebase_report_o_auth(
+        resources=["resources_example"],
+        project_id="projectId_example",
+    )
 )
 ```
 
@@ -9391,9 +9342,7 @@ Generate a report on NHost Data
 
 ```python
 generate_nhost_report_response = appwriteconsole.migrations.generate_nhost_report(
-    resources=[
-        "resources_example"
-    ],
+    resources=["resources_example"],
     subdomain="subdomain_example",
     region="region_example",
     admin_secret="adminSecret_example",
@@ -9457,13 +9406,13 @@ Generate a report on Appwrite Data
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-generate_report_on_appwrite_data_response = appwriteconsole.migrations.generate_report_on_appwrite_data(
-    resources=[
-        "resources_example"
-    ],
-    endpoint="endpoint_example",
-    project_id="projectID_example",
-    key="key_example",
+generate_report_on_appwrite_data_response = (
+    appwriteconsole.migrations.generate_report_on_appwrite_data(
+        resources=["resources_example"],
+        endpoint="endpoint_example",
+        project_id="projectID_example",
+        key="key_example",
+    )
 )
 ```
 
@@ -9505,9 +9454,7 @@ Generate a report on Supabase Data
 
 ```python
 generate_supabase_report_response = appwriteconsole.migrations.generate_supabase_report(
-    resources=[
-        "resources_example"
-    ],
+    resources=["resources_example"],
     endpoint="endpoint_example",
     api_key="apiKey_example",
     database_host="databaseHost_example",
@@ -9654,9 +9601,7 @@ Migrate Supabase Data
 
 ```python
 migrate_supabase_data_response = appwriteconsole.migrations.migrate_supabase_data(
-    resources=[
-        "string_example"
-    ],
+    resources=["string_example"],
     endpoint="https://example.com",
     api_key="<API_KEY>",
     database_host="<DATABASE_HOST>",
@@ -9965,9 +9910,7 @@ Create key
 ```python
 create_key_response = appwriteconsole.projects.create_key(
     name="<NAME>",
-    scopes=[
-        "string_example"
-    ],
+    scopes=["string_example"],
     project_id="projectId_example",
     expire="string_example",
 )
@@ -10163,9 +10106,7 @@ Create SMTP test
 
 ```python
 appwriteconsole.projects.create_smtp_test(
-    emails=[
-        "string_example"
-    ],
+    emails=["string_example"],
     sender_name="<SENDER_NAME>",
     sender_email="email@example.com",
     host="string_example",
@@ -10239,9 +10180,7 @@ Create webhook
 create_webhook_response = appwriteconsole.projects.create_webhook(
     security=False,
     name="<NAME>",
-    events=[
-        "string_example"
-    ],
+    events=["string_example"],
     url="string_example",
     project_id="projectId_example",
     enabled=False,
@@ -10397,9 +10336,11 @@ Enable or disable checking user passwords for similarity with their personal dat
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-enable_personal_data_check_response = appwriteconsole.projects.enable_personal_data_check(
-    enabled=False,
-    project_id="projectId_example",
+enable_personal_data_check_response = (
+    appwriteconsole.projects.enable_personal_data_check(
+        enabled=False,
+        project_id="projectId_example",
+    )
 )
 ```
 
@@ -11081,9 +11022,11 @@ Update authentication password dictionary status. Use this endpoint to enable or
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_auth_password_dictionary_response = appwriteconsole.projects.update_auth_password_dictionary(
-    enabled=False,
-    project_id="projectId_example",
+update_auth_password_dictionary_response = (
+    appwriteconsole.projects.update_auth_password_dictionary(
+        enabled=False,
+        project_id="projectId_example",
+    )
 )
 ```
 
@@ -11119,9 +11062,11 @@ Update authentication password history. Use this endpoint to set the number of p
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_auth_password_history_response = appwriteconsole.projects.update_auth_password_history(
-    limit=0,
-    project_id="projectId_example",
+update_auth_password_history_response = (
+    appwriteconsole.projects.update_auth_password_history(
+        limit=0,
+        project_id="projectId_example",
+    )
 )
 ```
 
@@ -11157,15 +11102,17 @@ Update custom email templates
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_custom_email_templates_response = appwriteconsole.projects.update_custom_email_templates(
-    subject="<SUBJECT>",
-    message="<MESSAGE>",
-    project_id="projectId_example",
-    type="verification",
-    locale="af",
-    sender_name="<SENDER_NAME>",
-    sender_email="email@example.com",
-    reply_to="email@example.com",
+update_custom_email_templates_response = (
+    appwriteconsole.projects.update_custom_email_templates(
+        subject="<SUBJECT>",
+        message="<MESSAGE>",
+        project_id="projectId_example",
+        type="verification",
+        locale="af",
+        sender_name="<SENDER_NAME>",
+        sender_email="email@example.com",
+        reply_to="email@example.com",
+    )
 )
 ```
 
@@ -11310,9 +11257,7 @@ Update key
 ```python
 update_key_response = appwriteconsole.projects.update_key(
     name="<NAME>",
-    scopes=[
-        "string_example"
-    ],
+    scopes=["string_example"],
     project_id="projectId_example",
     key_id="keyId_example",
     expire="string_example",
@@ -11758,9 +11703,7 @@ Update webhook
 update_webhook_response = appwriteconsole.projects.update_webhook(
     security=False,
     name="<NAME>",
-    events=[
-        "string_example"
-    ],
+    events=["string_example"],
     url="string_example",
     project_id="projectId_example",
     webhook_id="webhookId_example",
@@ -11997,8 +11940,10 @@ Update Rule Verification Status
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_rule_verification_status_response = appwriteconsole.proxy.update_rule_verification_status(
-    rule_id="ruleId_example",
+update_rule_verification_status_response = (
+    appwriteconsole.proxy.update_rule_verification_status(
+        rule_id="ruleId_example",
+    )
 )
 ```
 
@@ -12030,15 +11975,11 @@ Create a new storage bucket.
 create_bucket_response = appwriteconsole.storage.create_bucket(
     bucket_id="<BUCKET_ID>",
     name="<NAME>",
-    permissions=[
-        "[\"read(\"any\")\"]"
-    ],
+    permissions=['["read("any")"]'],
     file_security=False,
     enabled=False,
     maximum_file_size=1,
-    allowed_file_extensions=[
-        "string_example"
-    ],
+    allowed_file_extensions=["string_example"],
     compression="none",
     encryption=False,
     antivirus=False,
@@ -12116,9 +12057,7 @@ create_file_response = appwriteconsole.storage.create_file(
     bucket_id="bucketId_example",
     file_id="<FILE_ID>",
     file="string_example",
-    permissions=[
-        "[\"read(\"any\")\"]"
-    ],
+    permissions=['["read("any")"]'],
 )
 ```
 
@@ -12573,15 +12512,11 @@ Update a storage bucket by its unique ID.
 update_bucket_by_id_response = appwriteconsole.storage.update_bucket_by_id(
     name="<NAME>",
     bucket_id="bucketId_example",
-    permissions=[
-        "[\"read(\"any\")\"]"
-    ],
+    permissions=['["read("any")"]'],
     file_security=False,
     enabled=False,
     maximum_file_size=1,
-    allowed_file_extensions=[
-        "string_example"
-    ],
+    allowed_file_extensions=["string_example"],
     compression="none",
     encryption=False,
     antivirus=False,
@@ -12652,9 +12587,7 @@ update_file_by_id_response = appwriteconsole.storage.update_file_by_id(
     bucket_id="bucketId_example",
     file_id="fileId_example",
     name="<NAME>",
-    permissions=[
-        "[\"read(\"any\")\"]"
-    ],
+    permissions=['["read("any")"]'],
 )
 ```
 
@@ -12704,9 +12637,7 @@ Please note that to avoid a [Redirect Attack](https://github.com/OWASP/CheatShee
 
 ```python
 create_membership_response = appwriteconsole.teams.create_membership(
-    roles=[
-        "string_example"
-    ],
+    roles=["string_example"],
     team_id="teamId_example",
     email="email@example.com",
     user_id="<USER_ID>",
@@ -12769,9 +12700,7 @@ Create a new team. The user who creates the team will automatically be assigned 
 create_team_response = appwriteconsole.teams.create_team(
     team_id="<TEAM_ID>",
     name="<NAME>",
-    roles=[
-        "string_example"
-    ],
+    roles=["string_example"],
 )
 ```
 
@@ -13073,9 +13002,7 @@ Modify the roles of a team member. Only team members with the owner role have ac
 
 ```python
 update_membership_roles_response = appwriteconsole.teams.update_membership_roles(
-    roles=[
-        "string_example"
-    ],
+    roles=["string_example"],
     team_id="teamId_example",
     membership_id="membershipId_example",
 )
@@ -13527,14 +13454,16 @@ Create a new user. Password provided must be hashed with the [Scrypt Modified](h
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_scrypt_modified_user_response = appwriteconsole.users.create_scrypt_modified_user(
-    user_id="<USER_ID>",
-    email="email@example.com",
-    password="password",
-    password_salt="<PASSWORD_SALT>",
-    password_salt_separator="<PASSWORD_SALT_SEPARATOR>",
-    password_signer_key="<PASSWORD_SIGNER_KEY>",
-    name="<NAME>",
+create_scrypt_modified_user_response = (
+    appwriteconsole.users.create_scrypt_modified_user(
+        user_id="<USER_ID>",
+        email="email@example.com",
+        password="password",
+        password_salt="<PASSWORD_SALT>",
+        password_salt_separator="<PASSWORD_SALT_SEPARATOR>",
+        password_signer_key="<PASSWORD_SIGNER_KEY>",
+        name="<NAME>",
+    )
 )
 ```
 
@@ -14399,8 +14328,10 @@ Regenerate recovery codes that can be used as backup for MFA flow by User ID. Be
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-regenerate_mfa_recovery_codes_by_user_id_response = appwriteconsole.users.regenerate_mfa_recovery_codes_by_user_id(
-    user_id="userId_example",
+regenerate_mfa_recovery_codes_by_user_id_response = (
+    appwriteconsole.users.regenerate_mfa_recovery_codes_by_user_id(
+        user_id="userId_example",
+    )
 )
 ```
 
@@ -14467,9 +14398,11 @@ Update the user email verification status by its unique ID.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_email_verification_status_response = appwriteconsole.users.update_email_verification_status(
-    email_verification=False,
-    user_id="userId_example",
+update_email_verification_status_response = (
+    appwriteconsole.users.update_email_verification_status(
+        email_verification=False,
+        user_id="userId_example",
+    )
 )
 ```
 
@@ -14508,9 +14441,7 @@ Labels can be used to grant access to resources. While teams are a way for user'
 
 ```python
 update_labels_by_user_id_response = appwriteconsole.users.update_labels_by_user_id(
-    labels=[
-        "string_example"
-    ],
+    labels=["string_example"],
     user_id="userId_example",
 )
 ```
